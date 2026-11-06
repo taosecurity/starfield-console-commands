@@ -59,7 +59,8 @@ header, section { display: grid; gap: 12px; min-width: 0; scroll-margin-top: 76p
 .kinds { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 12px; max-width: 76rem; }
 .glance { margin: 0; padding-left: 1.1em; display: grid; gap: 5px; font-size: 14px; color: var(--muted); }
 .glance strong { color: var(--fg); }
-.kind { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; display: grid; gap: 6px; align-content: start; }
+.kind { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; display: grid; gap: 6px; align-content: start;
+  border-top: 5px solid hsl(var(--h) 65% var(--tint-dot-l)); }
 .kind h3 { margin: 0; font-size: 15px; font-weight: 650; }
 .kind p { font-size: 14px; color: var(--muted); }
 code, kbd { font: 13px var(--mono); background: var(--panel2); padding: 1px 4px; border-radius: 4px; }
@@ -146,7 +147,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 </header>
 <section id="kinds" aria-label="Overview">
   <div class="kinds">
-    <div class="kind">
+    <div class="kind" style="--h: 182">
       <h3>Console commands (438)</h3>
       <p>Built for the debug console only: toggles like <code>tgm</code> and <code>tcl</code>, teleports like <code>coc</code>,
       dumps, saving and loading. They change or report on the game as a whole. Most have a short form.</p>
@@ -154,7 +155,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
       travel (<code>coc</code>, <code>cow</code>, <code>movetoqt</code>), picking things (<code>prid</code> selects a reference by its ID),
       quests and Papyrus (<code>sqv</code>, <code>cqf</code>, the <code>DumpPapyrus&hellip;</code> reports), settings (<code>setgs</code>, <code>setini</code>)
       and many developer tools for rendering, memory and pathing that do little in a normal game.</p>    </div>
-    <div class="kind">
+    <div class="kind" style="--h: 235">
       <h3>Script commands (945) <span class="tag script">script</span></h3>
       <p>Functions from the engine's older built-in script language, such as <code>additem</code>, <code>setstage</code> and <code>getav</code>.
       They work in the console too, often on a target (<code>player.additem</code>), and many <code>Get</code>/<code>Is</code> ones exist
@@ -162,7 +163,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
       These are not Papyrus, the language mods are written in today. Some names exist in both (e.g. <code>SetStage</code>), but the console runs the old version;
       to reach a mod's Papyrus script from the console, use <code>cf</code> or <code>cqf</code>. <a href="#papyrus">More below.</a></p>
     </div>
-    <div class="kind">
+    <div class="kind" style="--h: 320">
       <h3>The labels</h3>
       <p><span class="tag">target</span> The command works on one object or person, not the whole game. Click it with the console open
       (its ID shows at the top of the console), then type the command; or put an ID in front, e.g. <code>player.additem</code> or <code>00005986.moveto player</code>.
@@ -170,7 +171,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
       <p><span class="tag script">script</span> A script command (see the Script commands box). No label means a console command.</p>
       <p><em>e.g.</em> lines under a name show the command typed out with real values. See <a href="#ids">Example IDs</a> for what each ID is.</p>
     </div>
-    <div class="kind">
+    <div class="kind" style="--h: 45">
       <h3>At a glance</h3>
       <ul class="glance">
         <li><strong>1,383 commands</strong> from the game's own table in Starfield 1.16.244.0, in 15 topics.</li>
