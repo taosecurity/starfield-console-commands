@@ -13,24 +13,34 @@
   --bg: #f6f7f9; --surface: #ffffff; --panel2: #f0f2f5; --fg: #1c2230; --muted: #5d6678; --line: #dde1e8;
   --accent: #3b5bdb; --accent-soft: #e6ebfb; --mark: #fff1a8; --side: #151a26; --side-text: #c9cfdb; --side-muted: #7f889b;
   --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  /* topic panels: each section sets --h (hue); these set the pastel recipe */
+  --tint-s: 70%; --tint-l: 95%; --tint-bd-s: 45%; --tint-bd-l: 85%; --tint-th-s: 55%; --tint-th-l: 90%; --tint-dot-l: 72%;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #10131a; --surface: #181c25; --panel2: #1f2430; --fg: #e3e7ef; --muted: #9aa3b5; --line: #2c3240;
+  --tint-s: 28%; --tint-l: 14%; --tint-bd-s: 25%; --tint-bd-l: 24%; --tint-th-s: 25%; --tint-th-l: 20%; --tint-dot-l: 62%;
   --accent: #8ea6ff; --accent-soft: #232b45; --mark: #5a4b12; --side: #0b0e14; --side-text: #aab2c2; --side-muted: #6c7588; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #10131a; --surface: #181c25; --panel2: #1f2430; --fg: #e3e7ef; --muted: #9aa3b5; --line: #2c3240;
+  --tint-s: 28%; --tint-l: 14%; --tint-bd-s: 25%; --tint-bd-l: 24%; --tint-th-s: 25%; --tint-th-l: 20%; --tint-dot-l: 62%;
   --accent: #8ea6ff; --accent-soft: #232b45; --mark: #5a4b12; --side: #0b0e14; --side-text: #aab2c2; --side-muted: #6c7588; color-scheme: dark }
 * { box-sizing: border-box; }
 html { background: var(--bg); }
 body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
-.layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); min-height: 100vh; align-items: start; }
+.layout { display: grid; grid-template-columns: 270px minmax(0, 1fr); min-height: 100vh; align-items: start; }
 .toc { position: sticky; top: 0; height: 100vh; overflow-y: auto; background: var(--side); color: var(--side-text); font-size: 14px;
   padding-block: 18px; padding-left: max(8px, env(safe-area-inset-left, 0px)); padding-right: 8px; }
 .toc ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 1px; }
 .toc li.gap { margin-top: 10px; }
 .toc a { display: flex; justify-content: space-between; gap: 8px; padding: 6px 10px; border-radius: 6px; color: var(--side-text); text-decoration: none; line-height: 1.3; }
 .toc a span { color: var(--side-muted); font: 12px var(--mono); font-variant-numeric: tabular-nums; }
+.toc a .lbl { display: flex; align-items: center; gap: 8px; color: inherit; font: inherit; }
+.toc .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; background: hsl(var(--h) 70% var(--tint-dot-l)); }
+section.topic { background: hsl(var(--h) var(--tint-s) var(--tint-l)); border: 1px solid hsl(var(--h) var(--tint-bd-s) var(--tint-bd-l));
+  border-radius: 14px; padding: 16px; }
+section.topic th { background: hsl(var(--h) var(--tint-th-s) var(--tint-th-l)); }
+section.topic .frame { border-color: hsl(var(--h) var(--tint-bd-s) var(--tint-bd-l)); }
 .toc a:hover { background: rgba(255,255,255,.07); color: #fff; }
 .toc a.active { background: rgba(255,255,255,.12); color: #fff; font-weight: 600; }
 .toc a.none { opacity: .45; }
@@ -106,22 +116,22 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 <nav class="toc" aria-label="Topics"><ul>
   <li><a href="#top">Top</a></li>
   <li><a href="#kinds">Overview</a></li>
-  <li class="gap"><a href="#common">Most commonly used <span>76</span></a></li>
-  <li><a href="#papyrus">Papyrus scripts &amp; debugging <span>48</span></a></li>
-  <li><a href="#quests">Quests, scenes &amp; dialogue <span>119</span></a></li>
-  <li><a href="#crime">Crime, factions &amp; ownership <span>83</span></a></li>
-  <li><a href="#space">Ships, space &amp; planets <span>107</span></a></li>
-  <li><a href="#outposts">Outposts &amp; research <span>16</span></a></li>
-  <li><a href="#combat">Combat &amp; weapons <span>118</span></a></li>
-  <li><a href="#items">Items &amp; inventory <span>59</span></a></li>
-  <li><a href="#actors">Player, NPCs &amp; AI <span>407</span></a></li>
-  <li><a href="#places">Places, weather &amp; time <span>113</span></a></li>
-  <li><a href="#system">Settings, saves &amp; system <span>97</span></a></li>
-  <li><a href="#objects">Objects &amp; references <span>106</span></a></li>
-  <li><a href="#display">Camera, display &amp; graphics <span>58</span></a></li>
-  <li><a href="#audio">Sound &amp; radio <span>9</span></a></li>
-  <li><a href="#math">Math &amp; random <span>6</span></a></li>
-  <li><a href="#other">Everything else <span>37</span></a></li>
+  <li class="gap"><a href="#common"><b class="lbl"><i class="dot" style="--h: 45"></i>Most commonly used</b> <span>76</span></a></li>
+  <li><a href="#papyrus"><b class="lbl"><i class="dot" style="--h: 182"></i>Papyrus scripts &amp; debugging</b> <span>48</span></a></li>
+  <li><a href="#quests"><b class="lbl"><i class="dot" style="--h: 320"></i>Quests, scenes &amp; dialogue</b> <span>119</span></a></li>
+  <li><a href="#crime"><b class="lbl"><i class="dot" style="--h: 98"></i>Crime, factions &amp; ownership</b> <span>83</span></a></li>
+  <li><a href="#space"><b class="lbl"><i class="dot" style="--h: 235"></i>Ships, space &amp; planets</b> <span>107</span></a></li>
+  <li><a href="#outposts"><b class="lbl"><i class="dot" style="--h: 12"></i>Outposts &amp; research</b> <span>16</span></a></li>
+  <li><a href="#combat"><b class="lbl"><i class="dot" style="--h: 150"></i>Combat &amp; weapons</b> <span>118</span></a></li>
+  <li><a href="#items"><b class="lbl"><i class="dot" style="--h: 288"></i>Items &amp; inventory</b> <span>59</span></a></li>
+  <li><a href="#actors"><b class="lbl"><i class="dot" style="--h: 65"></i>Player, NPCs &amp; AI</b> <span>407</span></a></li>
+  <li><a href="#places"><b class="lbl"><i class="dot" style="--h: 202"></i>Places, weather &amp; time</b> <span>113</span></a></li>
+  <li><a href="#system"><b class="lbl"><i class="dot" style="--h: 340"></i>Settings, saves &amp; system</b> <span>97</span></a></li>
+  <li><a href="#objects"><b class="lbl"><i class="dot" style="--h: 118"></i>Objects &amp; references</b> <span>106</span></a></li>
+  <li><a href="#display"><b class="lbl"><i class="dot" style="--h: 255"></i>Camera, display &amp; graphics</b> <span>58</span></a></li>
+  <li><a href="#audio"><b class="lbl"><i class="dot" style="--h: 32"></i>Sound &amp; radio</b> <span>9</span></a></li>
+  <li><a href="#math"><b class="lbl"><i class="dot" style="--h: 170"></i>Math &amp; random</b> <span>6</span></a></li>
+  <li><a href="#other"><b class="lbl"><i class="dot" style="--h: 308"></i>Everything else</b> <span>37</span></a></li>
   <li class="gap"><a href="#about">How to use</a></li>
   <li><a href="#ids">Example IDs</a></li>
   <li><a href="#papyrus">Console vs Papyrus</a></li>
@@ -183,7 +193,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   <span class="count" id="count"></span>
 </div>
 <p class="lede" id="nomatch" hidden>No commands match. Try a shorter word, or switch back to All.</p>
-<section id="common">
+<section id="common" class="topic" style="--h: 45">
   <h2>Most commonly used <small></small></h2>
   <p class="lede">Hand-picked: the commands most players and mod testers reach for. Each one also appears in its own topic below.</p>
   <div class="frame"><table>
@@ -192,7 +202,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="papyrus">
+<section id="papyrus" class="topic" style="--h: 182">
   <h2>Papyrus scripts &amp; debugging <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -200,7 +210,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="quests">
+<section id="quests" class="topic" style="--h: 320">
   <h2>Quests, scenes &amp; dialogue <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -208,7 +218,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="crime">
+<section id="crime" class="topic" style="--h: 98">
   <h2>Crime, factions &amp; ownership <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -216,7 +226,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="space">
+<section id="space" class="topic" style="--h: 235">
   <h2>Ships, space &amp; planets <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -224,7 +234,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="outposts">
+<section id="outposts" class="topic" style="--h: 12">
   <h2>Outposts &amp; research <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -232,7 +242,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="combat">
+<section id="combat" class="topic" style="--h: 150">
   <h2>Combat &amp; weapons <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -240,7 +250,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="items">
+<section id="items" class="topic" style="--h: 288">
   <h2>Items &amp; inventory <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -248,7 +258,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="actors">
+<section id="actors" class="topic" style="--h: 65">
   <h2>Player, NPCs &amp; AI <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -256,7 +266,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="places">
+<section id="places" class="topic" style="--h: 202">
   <h2>Places, weather &amp; time <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -264,7 +274,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="system">
+<section id="system" class="topic" style="--h: 340">
   <h2>Settings, saves &amp; system <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -272,7 +282,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="objects">
+<section id="objects" class="topic" style="--h: 118">
   <h2>Objects &amp; references <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -280,7 +290,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="display">
+<section id="display" class="topic" style="--h: 255">
   <h2>Camera, display &amp; graphics <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -288,7 +298,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="audio">
+<section id="audio" class="topic" style="--h: 32">
   <h2>Sound &amp; radio <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -296,7 +306,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="math">
+<section id="math" class="topic" style="--h: 170">
   <h2>Math &amp; random <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
@@ -304,7 +314,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <tbody></tbody>
   </table></div>
 </section>
-<section id="other">
+<section id="other" class="topic" style="--h: 308">
   <h2>Everything else <small></small></h2>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
