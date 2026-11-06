@@ -60,7 +60,7 @@ header, section { display: grid; gap: 12px; min-width: 0; scroll-margin-top: 76p
 .glance { margin: 0; padding-left: 1.1em; display: grid; gap: 5px; font-size: 14px; color: var(--muted); }
 .glance strong { color: var(--fg); }
 .kind { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; display: grid; gap: 6px; align-content: start;
-  border-top: 5px solid hsl(var(--h) 65% var(--tint-dot-l)); }
+  border-top: 5px solid hsl(var(--h) var(--bar-s, 65%) var(--tint-dot-l)); }
 .kind h3 { margin: 0; font-size: 15px; font-weight: 650; }
 .kind p { font-size: 14px; color: var(--muted); }
 code, kbd { font: 13px var(--mono); background: var(--panel2); padding: 1px 4px; border-radius: 4px; }
@@ -161,7 +161,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 <p class="lede" id="nomatch" hidden>No commands match. Try a shorter word, or switch back to All.</p>
 <section id="kinds" aria-label="Overview">
   <div class="kinds">
-    <div class="kind" style="--h: 182">
+    <div class="kind" style="--h: 182; --bar-s: 22%">
       <h3>Console commands (438)</h3>
       <p>Built for the debug console only: toggles like <code>tgm</code> and <code>tcl</code>, teleports like <code>coc</code>,
       dumps, saving and loading. They change or report on the game as a whole. Most have a short form.</p>
