@@ -66,10 +66,13 @@ header, section { display: grid; gap: 12px; min-width: 0; scroll-margin-top: 76p
 code, kbd { font: 13px var(--mono); background: var(--panel2); padding: 1px 4px; border-radius: 4px; }
 kbd { border: 1px solid var(--line); border-bottom-width: 2px; }
 a { color: var(--accent); }
-.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px;
-  display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; border-bottom: 1px solid var(--line); }
+.bar { --h: 202; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: hsl(var(--h) var(--tint-s) var(--tint-l)); border: 1px solid hsl(var(--h) var(--tint-bd-s) var(--tint-bd-l));
+  border-top: 5px solid hsl(var(--h) 65% var(--tint-dot-l)); border-radius: 12px; padding: 12px 14px;
+  box-shadow: 0 6px 16px -10px rgba(0,0,0,.45);
+  display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
 .bar input[type=search] { flex: 1 1 18rem; min-width: 0; font: 15px var(--body); color: var(--fg); background: var(--surface);
-  border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; }
+  border: 2px solid hsl(var(--h) 60% var(--tint-dot-l)); border-radius: 8px; padding: 8px 12px; }
 .bar input[type=search]:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
 .seg button { font: 14px var(--body); color: var(--muted); background: none; border: 0; padding: 8px 12px; cursor: pointer; }
@@ -145,6 +148,17 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   Open the console with <kbd>~</kbd>. Click a command name to copy its short form.</p>
   <p class="byline">By Richard Bejtlich, <a href="https://www.youtube.com/@RichardBejtlich" target="_blank" rel="noopener">Richard Presents Starfield Essentials</a> on YouTube</p>
 </header>
+<div class="bar" role="search">
+  <input type="search" id="q" placeholder="Search names, short forms, help text (press / to focus)" aria-label="Search commands" autocomplete="off">
+  <div class="seg" role="group" aria-label="Which commands">
+    <button type="button" data-kind="all" aria-pressed="true">All</button>
+    <button type="button" data-kind="console" aria-pressed="false">Console</button>
+    <button type="button" data-kind="script" aria-pressed="false">Script</button>
+  </div>
+  <label><input type="checkbox" id="shortonly"> Only with a short form</label>
+  <span class="count" id="count"></span>
+</div>
+<p class="lede" id="nomatch" hidden>No commands match. Try a shorter word, or switch back to All.</p>
 <section id="kinds" aria-label="Overview">
   <div class="kinds">
     <div class="kind" style="--h: 182">
@@ -183,17 +197,6 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     </div>
   </div>
 </section>
-<div class="bar" role="search">
-  <input type="search" id="q" placeholder="Search names, short forms, help text (press / to focus)" aria-label="Search commands" autocomplete="off">
-  <div class="seg" role="group" aria-label="Which commands">
-    <button type="button" data-kind="all" aria-pressed="true">All</button>
-    <button type="button" data-kind="console" aria-pressed="false">Console</button>
-    <button type="button" data-kind="script" aria-pressed="false">Script</button>
-  </div>
-  <label><input type="checkbox" id="shortonly"> Only with a short form</label>
-  <span class="count" id="count"></span>
-</div>
-<p class="lede" id="nomatch" hidden>No commands match. Try a shorter word, or switch back to All.</p>
 <section id="common" class="topic" style="--h: 45">
   <h2>Most commonly used <small></small></h2>
   <p class="lede">Hand-picked: the commands most players and mod testers reach for. Each one also appears in its own topic below.</p>
