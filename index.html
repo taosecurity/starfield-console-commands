@@ -152,12 +152,12 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 </ul></nav>
 <main>
 <header id="top">
-  <p class="eyebrow">Starfield 1.16.244.0 &middot; 1383 commands &middot; built 2026-11-09 15:23 UTC</p>
+  <p class="eyebrow">Starfield 1.16.244.0 &middot; 1383 commands &middot; built 2026-11-09 15:46 UTC</p>
   <h1>Starfield Console Commands</h1>
-  <p class="lede">Every command in the game's own command table, grouped by topic, with its short form, parameters and built-in help text.
+  <p class="lede">This page lists every command in the game's own command table, grouped by topic, with its short form, parameters and built-in help text.
   Open the console with <kbd>~</kbd>. Click a command name to copy its short form.</p>
   <p class="byline">By <a href="https://github.com/taosecurity" target="_blank" rel="noopener">Richard Bejtlich</a>, <a href="https://www.youtube.com/@RichardBejtlich" target="_blank" rel="noopener">Richard Presents Starfield Essentials</a> on YouTube</p>
-  <p class="byline">More Starfield tools and references: <a href="https://taosecurity.github.io/">Richard Presents Development Hub</a>.</p>
+  <p class="byline">More Starfield tools and references are on the <a href="https://taosecurity.github.io/">Richard Presents Development Hub</a>.</p>
 </header>
 <div class="bar" role="search">
   <input type="search" id="q" placeholder="Search names, short forms, help text (press / to focus)" aria-label="Search commands" autocomplete="off">
@@ -176,15 +176,15 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   <div class="kinds">
     <div class="kind" style="--h: 182; --bar-s: 22%">
       <h3>Console commands (438)</h3>
-      <p>Built for the debug console only: toggles like <code>tgm</code> and <code>tcl</code>, teleports like <code>coc</code>,
+      <p>These commands are built for the debug console only: toggles like <code>tgm</code> and <code>tcl</code>, teleports like <code>coc</code>,
       dumps, saving and loading. They change or report on the game as a whole. Most have a short form.</p>
-      <p>What they cover: cheats and toggles (<code>tgm</code> god mode, <code>tcl</code> no collision, <code>tm</code> hide the menus for screenshots),
+      <p>They cover cheats and toggles (<code>tgm</code> god mode, <code>tcl</code> no collision, <code>tm</code> hide the menus for screenshots),
       travel (<code>coc</code>, <code>cow</code>, <code>movetoqt</code>), picking things (<code>prid</code> selects a reference by its ID),
       quests and Papyrus (<code>sqv</code>, <code>cqf</code>, the <code>DumpPapyrus&hellip;</code> reports), settings (<code>setgs</code>, <code>setini</code>)
       and many developer tools for rendering, memory and pathing that do little in a normal game.</p>    </div>
     <div class="kind" style="--h: 235">
       <h3>Script commands (945) <span class="tag script">script</span></h3>
-      <p>Functions from the engine's older built-in script language, such as <code>additem</code>, <code>setstage</code> and <code>getav</code>.
+      <p>These are functions from the engine's older built-in script language, such as <code>additem</code>, <code>setstage</code> and <code>getav</code>.
       They work in the console too, often on a target (<code>player.additem</code>), and many <code>Get</code>/<code>Is</code> ones exist
       mainly as conditions in the Creation Kit; in the console they just print a value.
       These are not Papyrus, the language mods are written in today. Some names exist in both (e.g. <code>SetStage</code>), but the console runs the old version;
@@ -195,7 +195,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
       <p><span class="tag">target</span> The command works on one object or person, not the whole game. Click it with the console open
       (its ID shows at the top of the console), then type the command; or put an ID in front, e.g. <code>player.additem</code> or <code>00005986.moveto player</code>.
       With nothing selected, many target commands do nothing or act on the player.</p>
-      <p><span class="tag script">script</span> A script command (see the Script commands box). No label means a console command.</p>
+      <p><span class="tag script">script</span> It marks a script command (see the Script commands box). No label means a console command.</p>
       <p><em>e.g.</em> lines under a name show the command typed out with real values. See <a href="#ids">Example IDs</a> for what each ID is.</p>
     </div>
     <div class="kind" style="--h: 45">
@@ -204,8 +204,8 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
         <li><strong>1,383 commands</strong> from the game's own table in Starfield 1.16.244.0, in 15 topics.</li>
         <li><strong>Start with</strong> <a href="#common">Most commonly used</a>: 76 picks such as <code>tgm</code>, <code>tcl</code>, <code>coc</code> and <code>player.additem</code>.</li>
         <li><strong>Every command has an example</strong> built from real game IDs.</li>
-        <li><strong>Testing mods?</strong> <code>dps</code>, <code>dpt</code> and <code>sqs</code> report script and quest health; see <a href="#papyrus">Console vs Papyrus</a>.</li>
-        <li><strong>Not listed:</strong> commands that SFSE plugins add, such as <code>DumpPointerHandles</code>.</li>
+        <li><strong>If you're testing mods,</strong> <code>dps</code>, <code>dpt</code> and <code>sqs</code> report script and quest health; see <a href="#papyrus">Console vs Papyrus</a>.</li>
+        <li><strong>Not listed:</strong> the page leaves out commands that SFSE plugins add, such as <code>DumpPointerHandles</code>.</li>
       </ul>
     </div>
   </div>
@@ -213,7 +213,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 </section>
 <section id="common" class="topic" style="--h: 45">
   <h2>Most commonly used <small></small></h2>
-  <p class="lede">Hand-picked: the commands most players and mod testers reach for. Each one also appears in its own topic below.</p>
+  <p class="lede">These are hand-picked: the commands most players and mod testers reach for. Each one also appears in its own topic below.</p>
   <div class="frame"><table>
     <colgroup><col class="c-cmd"><col class="c-short"><col class="c-par"><col class="c-help"></colgroup>
     <thead><tr><th>Command</th><th>Short</th><th>Parameters</th><th>What it does (the game's own help text)</th></tr></thead>
@@ -352,14 +352,14 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   </ul>
   <h2>What's in this list</h2>
   <ul>
-    <li>Read from the command table in <code>Starfield.exe</code> 1.16.244.0 (Steam, file date 2026-06-12). The names and help text are the game's own, including leftovers from older Bethesda games; some commands do nothing in Starfield.</li>
+    <li>This list was read from the command table in <code>Starfield.exe</code> 1.16.244.0 (Steam, file date 2026-06-12). The names and help text are the game's own, including leftovers from older Bethesda games; some commands do nothing in Starfield.</li>
     <li>Commands added by SFSE plugins are not included, e.g. Starfield Engine Fixes' <code>DumpPointerHandles</code>.</li>
     <li>A game update can add or change commands; the list is regenerated after updates.</li>
   </ul>
 </section>
 <section id="ids" class="about">
   <h2>Example IDs</h2>
-  <p>The values used in the examples, all checked in Starfield.esm. Base records are given by FormID; quests, cells, worldspaces, globals and game settings by editor ID.</p>
+  <p>These are the values used in the examples, all checked in Starfield.esm. Base records are given by FormID; quests, cells, worldspaces, globals and game settings by editor ID.</p>
   <div class="frame"><table class="ids">
     <thead><tr><th>Value</th><th>What it is</th></tr></thead>
     <tbody>
@@ -423,14 +423,14 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <li><code>sv</code> and <code>sqv</code> show a script's variables.</li>
     <li>The <code>DumpPapyrus&hellip;</code> commands report on running Papyrus scripts to the Papyrus log.</li>
   </ul>
-  <p><strong>Same names, different things.</strong> <code>SetValue</code>, <code>AddItem</code> and <code>SetStage</code> are console script commands, and Papyrus
+  <p><strong>The names are the same, but the things are different.</strong> <code>SetValue</code>, <code>AddItem</code> and <code>SetStage</code> are console script commands, and Papyrus
   has functions with the same names (<code>Actor.SetValue</code>, <code>ObjectReference.AddItem</code>, <code>Quest.SetStage</code>). They do similar jobs but
   aren't the same thing. This page lists what you can type in the console; it doesn't list the functions a Papyrus mod can call.
   For those, use a Papyrus reference such as the Creation Kit wiki.</p>
 </section>
 <footer>
-  <p>Made by <a href="https://github.com/taosecurity" target="_blank" rel="noopener">Richard Bejtlich</a> of Richard Presents Starfield Essentials: <a href="https://www.youtube.com/@RichardBejtlich" target="_blank" rel="noopener">youtube.com/@RichardBejtlich</a>.</p>
-  <p>Unofficial list, not made or endorsed by Bethesda. Starfield is a trademark of ZeniMax Media.</p>
+  <p><a href="https://github.com/taosecurity" target="_blank" rel="noopener">Richard Bejtlich</a> of Richard Presents Starfield Essentials made this page: <a href="https://www.youtube.com/@RichardBejtlich" target="_blank" rel="noopener">youtube.com/@RichardBejtlich</a>.</p>
+  <p>This is an unofficial list, not made or endorsed by Bethesda. Starfield is a trademark of ZeniMax Media.</p>
 </footer>
 </main>
 </div>
