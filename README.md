@@ -4,7 +4,7 @@ This page is a searchable list of every console and script command in Starfield.
 
 **View it here:** https://taosecurity.github.io/starfield-console-commands/
 
-- The page lists 1,383 commands in 15 topics, with a "Most commonly used" group first.
+- The page lists 1,527 commands in 15 topics, with a "Most commonly used" group first.
 - Each command shows its short form, parameters and the game's own help text, plus an example built from real game IDs.
 - You can search, filter by console or script commands, and click a name to copy it.
 
