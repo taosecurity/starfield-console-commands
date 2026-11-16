@@ -155,11 +155,11 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   <li><a class="edge" style="--h: 308" href="#other"><b class="lbl">Everything else</b> <span>86</span></a></li>
   <li class="gap"><a href="#about">How to use</a></li>
   <li><a href="#ids">Example IDs</a></li>
-  <li><a href="#papyrus">Console vs Papyrus</a></li>
+  <li><a href="#console-vs-papyrus">Console vs Papyrus</a></li>
 </ul></nav>
 <main>
 <header id="top">
-  <p class="eyebrow">Starfield 1.16.244.0 &middot; 1527 commands &middot; built 2026-11-11 14:36 UTC</p>
+  <p class="eyebrow">Starfield 1.16.244.0 &middot; 1527 commands &middot; built 2026-11-16 23:18 UTC</p>
   <h1>Starfield Console Commands</h1>
   <p class="lede">This page lists every command in the game's own command table, grouped by topic, with its short form, parameters and built-in help text.
   Open the console with <kbd>~</kbd>. Click a command name to copy its short form.</p>
@@ -195,7 +195,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
       They work in the console too, often on a target (<code>player.additem</code>), and many <code>Get</code>/<code>Is</code> ones exist
       mainly as conditions in the Creation Kit; in the console they just print a value.
       These are not Papyrus, the language mods are written in today. Some names exist in both (e.g. <code>SetStage</code>), but the console runs the old version;
-      to reach a mod's Papyrus script from the console, use <code>cf</code> or <code>cqf</code>. <a href="#papyrus">More below.</a></p>
+      to reach a mod's Papyrus script from the console, use <code>cf</code> or <code>cqf</code>. <a href="#console-vs-papyrus">More below.</a></p>
     </div>
     <div class="kind" style="--h: 320">
       <h3>The labels</h3>
@@ -211,7 +211,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
         <li><strong>1,527 commands</strong> from the game's own table in Starfield 1.16.244.0, in 15 topics.</li>
         <li><strong>Start with</strong> <a href="#common">Most commonly used</a>: 79 picks such as <code>tgm</code>, <code>tcl</code>, <code>coc</code> and <code>player.additem</code>.</li>
         <li><strong>Every command has an example</strong> built from real game IDs.</li>
-        <li><strong>If you're testing mods,</strong> <code>dps</code>, <code>dpt</code> and <code>sqs</code> report script and quest health; see <a href="#papyrus">Console vs Papyrus</a>.</li>
+        <li><strong>If you're testing mods,</strong> <code>dps</code>, <code>dpt</code> and <code>sqs</code> report script and quest health; see <a href="#console-vs-papyrus">Console vs Papyrus</a>.</li>
         <li><strong>Not listed:</strong> the page leaves out commands that SFSE plugins add, such as <code>DumpPointerHandles</code>.</li>
       </ul>
     </div>
@@ -415,7 +415,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     </tbody>
   </table></div>
 </section>
-<section id="papyrus" class="about">
+<section id="console-vs-papyrus" class="about">
   <h2>Console commands, script commands and Papyrus</h2>
   <p>Starfield has two separate scripting systems, and both have "script" in the name.</p>
   <p><strong>The old script language</strong> (modders call it ObScript) dates back to Morrowind and Oblivion, when mods were written in it.
