@@ -136,6 +136,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 <div class="layout">
 <nav class="toc" aria-label="Topics"><ul>
   <li><a href="#top">Top</a></li>
+  <li><a href="#news">What's new</a></li>
   <li><a href="#kinds">Overview</a></li>
   <li class="gap"><a class="edge" style="--h: 45" href="#common"><b class="lbl">Most commonly used</b> <span>79</span></a></li>
   <li><a class="edge" style="--h: 182" href="#papyrus"><b class="lbl">Papyrus scripts &amp; debugging</b> <span>50</span></a></li>
@@ -159,13 +160,22 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 </ul></nav>
 <main>
 <header id="top">
-  <p class="eyebrow">Starfield 1.16.244.0 &middot; 1527 commands &middot; built 2026-11-16 23:18 UTC</p>
+  <p class="eyebrow">Starfield 1.16.244.0 &middot; 1527 commands &middot; built 2026-11-20 13:10 UTC</p>
   <h1>Starfield Console Commands</h1>
   <p class="lede">This page lists every command in the game's own command table, grouped by topic, with its short form, parameters and built-in help text.
   Open the console with <kbd>~</kbd>. Click a command name to copy its short form.</p>
   <p class="byline">By <a href="https://github.com/taosecurity" target="_blank" rel="noopener">Richard Bejtlich</a>, <a href="https://www.youtube.com/@RichardBejtlich" target="_blank" rel="noopener">Richard Presents Starfield Essentials</a> on YouTube</p>
   <p class="byline">More Starfield tools and references are on the <a href="https://taosecurity.github.io/">Richard Presents Development Hub</a>.</p>
 </header>
+<section id="news" class="about">
+  <h2>What's new</h2>
+  <ul>
+    <li><strong>2026-11-16.</strong> The note on console commands versus Papyrus functions now has its own link target, so links to it land in the right place.</li>
+    <li><strong>2026-11-11.</strong> The page now finds 144 more commands that set themselves up when the game starts, for 570 console commands and 968 script commands in all.</li>
+    <li><strong>2026-11-11.</strong> The Most commonly used group now includes ToggleFlyCam (tfc), QuickSave and QuickLoad.</li>
+    <li><strong>2026-11-09.</strong> A Clear button next to the search box empties it in one click.</li>
+  </ul>
+</section>
 <div class="bar" role="search">
   <span class="qwrap"><input type="search" id="q" placeholder="Search names, short forms, help text (press / to focus)" aria-label="Search commands" autocomplete="off"><button type="button" class="qclear" aria-label="Clear the search box" onclick="var q=document.getElementById('q');q.value='';q.dispatchEvent(new Event('input'));q.focus()">Clear</button></span>
   <div class="seg" role="group" aria-label="Which commands">
